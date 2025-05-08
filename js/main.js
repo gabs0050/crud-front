@@ -1,6 +1,6 @@
 'use strict'
 
-import { getContatos, getContatosPorNome } from './contato.js'
+import { getContatos, getContatosPorNome, postContato } from './contato.js'
 
 function criarCard(contato) {
     const container = document.getElementById('container')
@@ -35,7 +35,7 @@ function voltarHome () {
     document.querySelector('main').className = 'card-show'
 }
 
-function salvasContato () {
+async function salvarContato () {
     const contato = {
             "nome": document.getElementById('nome').value,
             "celular": document.getElementById('celular').value,
@@ -45,7 +45,11 @@ function salvasContato () {
             "cidade": document.getElementById('cidade').value
     }
 
-    console.log(contato)
+    if (await postContato(contato)){
+        await alert('Cadastro realizado com sucesso!!!')
+        exibirContatos()
+        voltarHome()
+    }
 }
 
 exibirContatos()
@@ -53,10 +57,13 @@ exibirContatos()
 document.getElementById('pesquisar')
     .addEventListener('keydown', exibirPesquisa)
 
-document.getElementById('button-contato') // Corrigi o ID aqui
+document.getElementById('button-contato')
     .addEventListener('click', cadastroContato)
 
 document.getElementById('cancelar')
     .addEventListener('click', voltarHome)
+
+document.getElementById('salvar')
+    .addEventListener('click', salvarContato)
 
 document.getElementById
