@@ -21,13 +21,42 @@ async function exibirContatos() {
 }
 async function exibirPesquisa(evento) {
     if(evento.key == 'Enter'){
-       const contatos = await getContatosPorNome(evento.target.value)
-       container.replaceChildren()
-       contatos.forEach(criarCard)
+        const contatos = await getContatosPorNome(evento.target.value)
+        container.replaceChildren()
+        contatos.forEach(criarCard)
     }
+}
+
+function cadastroContato () {
+    document.querySelector('main').className = 'form-show'
+}
+
+function voltarHome () {
+    document.querySelector('main').className = 'card-show'
+}
+
+function salvasContato () {
+    const contato = {
+            "nome": document.getElementById('nome').value,
+            "celular": document.getElementById('celular').value,
+            "foto": document.getElementById('foto').value,
+            "email": document.getElementById('email').value,
+            "endereco": document.getElementById('endereco').value,
+            "cidade": document.getElementById('cidade').value
+    }
+
+    console.log(contato)
 }
 
 exibirContatos()
 
 document.getElementById('pesquisar')
-document.addEventListener('keydown', exibirPesquisa)
+    .addEventListener('keydown', exibirPesquisa)
+
+document.getElementById('button-contato') // Corrigi o ID aqui
+    .addEventListener('click', cadastroContato)
+
+document.getElementById('cancelar')
+    .addEventListener('click', voltarHome)
+
+document.getElementById
