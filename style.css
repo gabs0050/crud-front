@@ -55,6 +55,10 @@ main{
     gap: 32px;
 }
 
+main.card-show .container{
+    display: flex;
+}
+
 .card-contato {
     height: 300px;
     width: 250px;
@@ -73,7 +77,11 @@ main{
     border: 4px solid red;
 }
 
+<<<<<<< HEAD
 form {
+=======
+form{
+>>>>>>> f739e92225be5bce82e3368b31a13f356b495251
     width: 80%;
     margin: auto;
     display: none;
@@ -82,6 +90,7 @@ form {
     gap: 32px;
     padding: 32px;
 }
+<<<<<<< HEAD
 .preview {
     position: relative;
     width: 300px;
@@ -105,6 +114,24 @@ form {
     width: 100%;
     height: 100%;
     border-radius: 50%;
+=======
+
+main.form-show form{
+    display: flex;
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+}
+
+.preview{
+    position: relative;
+    width: 250px;
+    height: 300px;
+    border-radius: 50%;
+    border: 2px solid red;
+>>>>>>> f739e92225be5bce82e3368b31a13f356b495251
 }
 
 .input-container{
@@ -113,16 +140,40 @@ form {
     flex-direction: column;
     gap: 16px;
 }
+<<<<<<< HEAD
 .input {
     display: flex;
     flex-direction: column;
 }
 .input-text {
+=======
+
+.preview-input{
+    display: none;
+}
+
+.preview-image{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.preview-label{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.input-text{
+>>>>>>> f739e92225be5bce82e3368b31a13f356b495251
     height: 32px;
     border: 1px solid red;
     outline: none;
     padding-left: 16px;
 }
+<<<<<<< HEAD
 
 .button-container {
     width: 100%;
@@ -134,4 +185,10 @@ main.card-show .container{
 }
 main.form-show form{
     display: flex;
+=======
+.button-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+>>>>>>> f739e92225be5bce82e3368b31a13f356b495251
 }

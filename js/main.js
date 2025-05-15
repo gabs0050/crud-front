@@ -1,7 +1,11 @@
 'use strict'
 
+<<<<<<< HEAD
 import { getContatos, getContatosPorNome, postContato } from "./contato.js";
 import { uploadImageToAzure } from "./uploadImageToAzure.js"; // Corrigido para importar do arquivo correto
+=======
+import { getContatos, getContatosPorNome, postContato } from './contato.js'
+>>>>>>> f739e92225be5bce82e3368b31a13f356b495251
 
 async function handleUploadImage() {
     const uploadParams = {
@@ -32,6 +36,7 @@ async function exibirContatos () {
     container.replaceChildren()
     contatos.forEach(criarCard)
 }
+<<<<<<< HEAD
 
 async function exibirPesquisa (evento) {
     const container = document.getElementById('container')
@@ -39,6 +44,38 @@ async function exibirPesquisa (evento) {
         const contatos = await getContatosPorNome(evento.target.value)
         container.replaceChildren()
         contatos.forEach(criarCard)
+=======
+async function exibirPesquisa(evento) {
+    if(evento.key == 'Enter'){
+        const contatos = await getContatosPorNome(evento.target.value)
+        container.replaceChildren()
+        contatos.forEach(criarCard)
+    }
+}
+
+function cadastroContato () {
+    document.querySelector('main').className = 'form-show'
+}
+
+function voltarHome () {
+    document.querySelector('main').className = 'card-show'
+}
+
+async function salvarContato () {
+    const contato = {
+            "nome": document.getElementById('nome').value,
+            "celular": document.getElementById('celular').value,
+            "foto": document.getElementById('foto').value,
+            "email": document.getElementById('email').value,
+            "endereco": document.getElementById('endereco').value,
+            "cidade": document.getElementById('cidade').value
+    }
+
+    if (await postContato(contato)){
+        await alert('Cadastro realizado com sucesso!!!')
+        exibirContatos()
+        voltarHome()
+>>>>>>> f739e92225be5bce82e3368b31a13f356b495251
     }
     
 }
@@ -71,6 +108,7 @@ async function salvarContato () {
 exibirContatos()
 
 document.getElementById('pesquisar')
+<<<<<<< HEAD
         .addEventListener('keydown',exibirPesquisa)
 
 document.getElementById('novo-contato')
@@ -81,3 +119,17 @@ document.getElementById('cancelar')
 
 document.getElementById('salvar')
         .addEventListener('click', salvarContato)
+=======
+    .addEventListener('keydown', exibirPesquisa)
+
+document.getElementById('button-contato')
+    .addEventListener('click', cadastroContato)
+
+document.getElementById('cancelar')
+    .addEventListener('click', voltarHome)
+
+document.getElementById('salvar')
+    .addEventListener('click', salvarContato)
+
+document.getElementById
+>>>>>>> f739e92225be5bce82e3368b31a13f356b495251

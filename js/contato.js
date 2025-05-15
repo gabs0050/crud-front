@@ -13,6 +13,7 @@ export async function getContatosPorNome (nome) {
     return data
 }
 
+<<<<<<< HEAD
 async function getContato (id) {
     const url = `https://bakcend-fecaf-render.onrender.com/contatos/${id}`
     const response = await fetch(url)
@@ -22,6 +23,9 @@ async function getContato (id) {
 }
 
 export async function postContato(contato) {
+=======
+export async function postContato(contato){
+>>>>>>> f739e92225be5bce82e3368b31a13f356b495251
     const url = 'https://bakcend-fecaf-render.onrender.com/contatos'
     const options = {
         method: 'POST',
